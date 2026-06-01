@@ -10,7 +10,7 @@ import SectionHeading from '../ui/SectionHeading'
 import { BUSINESS, whatsappLink } from '../../data/business'
 
 const MAPS_QUERY = encodeURIComponent(
-  'Rod. BR-101 Sul, 3460, Distrito Industrial, Cabo de Santo Agostinho - PE, 54503-410',
+  'Vivos Trocão, Antiga Estrada Rodovia, 9902, Charneca, Cabo de Santo Agostinho - PE',
 )
 const MAPS_EMBED = `https://maps.google.com/maps?q=${MAPS_QUERY}&z=15&output=embed`
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${MAPS_QUERY}`
@@ -24,10 +24,10 @@ export default function Location() {
           kicker="Onde estamos"
           title={
             <>
-              Venha nos visitar, <span className="hl">na BR-101</span>.
+              Venha nos visitar, <span className="hl">na Charneca</span>.
             </>
           }
-          subtitle="No Distrito Industrial, em Cabo de Santo Agostinho/PE. Fácil de chegar."
+          subtitle="No bairro da Charneca, em Cabo de Santo Agostinho/PE. Fácil de chegar."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -38,8 +38,12 @@ export default function Location() {
                 {BUSINESS.address.street}
                 <br />
                 {BUSINESS.address.district} — {BUSINESS.address.cityState}
-                <br />
-                CEP {BUSINESS.address.zip}
+                {BUSINESS.address.zip && (
+                  <>
+                    <br />
+                    CEP {BUSINESS.address.zip}
+                  </>
+                )}
                 <br />
                 <a
                   href={MAPS_LINK}

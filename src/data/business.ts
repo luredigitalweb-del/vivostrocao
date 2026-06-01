@@ -32,11 +32,11 @@ export const BUSINESS = {
   instagram: 'vivostrocao',
   instagramUrl: 'https://instagram.com/vivostrocao',
   address: {
-    street: 'Rod. BR-101 Sul, 3460',
-    district: 'Distrito Industrial',
+    street: 'Antiga Estrada Rodovia, 9902',
+    district: 'Charneca',
     cityState: 'Cabo de Santo Agostinho/PE',
-    zip: '54503-410',
-    full: 'Rod. BR-101 Sul, 3460 — Distrito Industrial — Cabo de Santo Agostinho/PE — CEP 54503-410',
+    zip: '',
+    full: 'Antiga Estrada Rodovia, 9902 — Charneca — Cabo de Santo Agostinho/PE',
   },
   hours: {
     weekdays: 'Segunda a sexta: 08h às 17h',
