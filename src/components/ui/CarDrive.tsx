@@ -31,7 +31,6 @@ function CarSvg({ run }: { run: boolean }) {
       viewBox="0 0 66 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="drop-shadow-[0_5px_9px_rgba(255,196,0,0.45)]"
     >
       <ellipse cx="64" cy="15.5" rx="7" ry="3.2" fill="#FFFFFF" opacity="0.45" />
       <path d="M16 14 L22 5 H40 L48 14 Z" fill="#FFC400" />
@@ -97,12 +96,8 @@ export default function CarDrive({ run = true, vertical = false }: CarDriveProps
         <span className="block h-[3px] w-3.5 rounded-full bg-accent/30" />
         <span className="block h-[3px] w-8 rounded-full bg-accent/45" />
       </span>
-      {/* Brilho pulsante na base */}
-      <motion.span
-        className="absolute -bottom-1 left-1/2 h-3 w-11 -translate-x-1/2 rounded-full bg-accent/55 blur-md"
-        animate={{ opacity: [0.4, 0.9, 0.4], scaleX: [0.85, 1.1, 0.85] }}
-        transition={{ duration: 0.7, repeat: Infinity, ease: 'easeInOut' }}
-      />
+      {/* Brilho na base (estático) */}
+      <span className="absolute -bottom-1 left-1/2 h-3 w-11 -translate-x-1/2 rounded-full bg-accent/50 blur-md" />
       {/* Balanço (suspensão) */}
       <motion.div
         animate={{ y: [0, -1.5, 0] }}

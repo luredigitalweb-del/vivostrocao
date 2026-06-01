@@ -32,11 +32,10 @@ export default function Hero() {
       {/* ---------- Fundo: brilho vermelho + textura (sem foto) ---------- */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-graphite via-ink to-ink" />
-        {/* Brilho vermelho central pulsante */}
-        <div className="absolute inset-0 bg-hero-glow animate-glow-pulse" />
-        {/* Halos vermelhos laterais */}
-        <div className="absolute -left-32 top-1/4 h-[30rem] w-[30rem] rounded-full bg-brand/15 blur-[130px]" />
-        <div className="absolute -right-32 bottom-1/4 h-[30rem] w-[30rem] rounded-full bg-brand/10 blur-[130px]" />
+        {/* Brilho vermelho central (estático — sem pulsar p/ performance) */}
+        <div className="absolute inset-0 bg-hero-glow" />
+        {/* Halo vermelho lateral (blur menor p/ mobile) */}
+        <div className="absolute -left-24 top-1/4 hidden h-[26rem] w-[26rem] rounded-full bg-brand/15 blur-[90px] sm:block" />
         {/* Grade técnica */}
         <div className="absolute inset-0 bg-grid-dark bg-[size:54px_54px] opacity-40" />
         {/* Vinheta inferior */}
@@ -54,7 +53,7 @@ export default function Hero() {
           {/* Pill badge */}
           <motion.span
             variants={fadeUp}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm"
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white"
           >
             <Zap className="h-4 w-4 text-accent" />
             {BUSINESS.yearsExperience} anos em {BUSINESS.city}/{BUSINESS.state}

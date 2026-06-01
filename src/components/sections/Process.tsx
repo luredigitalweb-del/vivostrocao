@@ -27,7 +27,10 @@ export default function Process() {
   // Gatilho confiável (funciona mesmo no mobile, onde a seção é alta):
   // dispara assim que ~12% da grade entra na tela.
   const gridRef = useRef<HTMLDivElement>(null)
+  // Revela uma vez (steps + linha); o carro só roda enquanto a seção
+  // está visível (economiza bateria/CPU quando o usuário sai dela).
   const run = useInView(gridRef, { once: true, amount: 0.12 })
+  const active = useInView(gridRef, { amount: 0.05 })
 
   return (
     <section className="bg-paper py-20 md:py-28">
@@ -56,7 +59,7 @@ export default function Process() {
             animate={run ? { scaleX: 1 } : { scaleX: 0 }}
             transition={{ duration: 4.6, ease: 'linear' }}
           />
-          <CarDrive run={run} />
+          <CarDrive run={run && active} />
 
           {/* ---- Mobile: linha vertical ---- */}
           <div className="absolute bottom-2 left-3 top-2 w-px bg-ink-soft/15 lg:hidden" />
@@ -66,7 +69,7 @@ export default function Process() {
             animate={run ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ duration: 4.6, ease: 'linear' }}
           />
-          <CarDrive run={run} vertical />
+          <CarDrive run={run && active} vertical />
 
           {STEPS.map((s, i) => (
             <motion.div

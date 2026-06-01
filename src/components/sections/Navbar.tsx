@@ -44,8 +44,8 @@ export default function Navbar() {
       <nav
         className={`container-lp flex h-16 items-center justify-between rounded-2xl px-4 transition-all duration-300 sm:px-5 ${
           scrolled
-            ? 'border border-line bg-ink/80 shadow-glow backdrop-blur-xl'
-            : 'border border-transparent bg-ink/40 backdrop-blur-md'
+            ? 'border border-line bg-ink/95 shadow-glow lg:bg-ink/80 lg:backdrop-blur-xl'
+            : 'border border-transparent bg-ink/70 lg:bg-ink/40 lg:backdrop-blur-md'
         }`}
       >
         <a href="#topo" aria-label="Vivos Trocão — início">
